@@ -298,8 +298,8 @@
                             <button type="submit" class="btn btn-success btn-lg">Calcular Liquidación</button>
                         </div>
                     </form>
-                    <div class="row g-3 mt-4" id="resumenTotales">
-                        <div class="col-md-3">
+                    <div class="row g-3 mt-3" id="resumenTotales">
+                        <div class="col-md-6 col-xl-3 mt-1">
                             <div class="card text-center shadow-sm">
                                 <div class="card-body">
                                     <h6 class="card-title">Total CTS</h6>
@@ -307,7 +307,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6 col-xl-3 mt-1">
                             <div class="card text-center shadow-sm">
                                 <div class="card-body">
                                     <h6 class="card-title">Total Gratificaciones</h6>
@@ -315,7 +315,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6 col-xl-3 mt-1">
                             <div class="card text-center shadow-sm">
                                 <div class="card-body">
                                     <h6 class="card-title">Liquidación Total</h6>
@@ -323,7 +323,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6 col-xl-3 mt-1">
                             <div class="card text-center shadow-sm">
                                 <div class="card-body">
                                     <h6 class="card-title">Total General</h6>
@@ -333,28 +333,32 @@
                         </div>
                     </div>
 
-                    <ul class="nav nav-tabs mb-3 mt-3" id="detalleTabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="cts-tab" data-toggle="tab" href="#cts" role="tab" aria-controls="resumen" aria-selected="true">
-                                Detalle: CTS
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="vaciones-tab" data-toggle="tab" href="#vacaciones" role="tab" aria-controls="detalle" aria-selected="false">
-                                Detalle: Vaciones Truncas
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="gratificaciones-tab" data-toggle="tab" href="#gratificaciones" role="tab" aria-controls="resumen" aria-selected="true">
-                                Detalle: Gratificaciones Truncas
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="otros-tab" data-toggle="tab" href="#otros" role="tab" aria-controls="detalle" aria-selected="false">
-                                Detalle: Otros Ingresos
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="nav nav-tabs nav-fill mb-3 mt-3" id="detalleTabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="cts-tab" data-toggle="tab" href="#cts" role="tab" aria-controls="resumen" aria-selected="true">
+                                        Detalle: CTS
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="vaciones-tab" data-toggle="tab" href="#vacaciones" role="tab" aria-controls="detalle" aria-selected="false">
+                                        Detalle: Vaciones Truncas
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="gratificaciones-tab" data-toggle="tab" href="#gratificaciones" role="tab" aria-controls="resumen" aria-selected="true">
+                                        Detalle: Gratificaciones Truncas
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="otros-tab" data-toggle="tab" href="#otros" role="tab" aria-controls="detalle" aria-selected="false">
+                                        Detalle: Otros Ingresos
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
                     <div class="tab-content" id="detalleTabsContent">
                         <div class="tab-pane fade show active" id="cts" role="tabpanel" aria-labelledby="cts-tab">
@@ -385,7 +389,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr class="font-weight-bold">
-                                        <td colspan="2">Total Gratificación</td>
+                                        <td colspan="2">Total CTS</td>
                                         <td id="totalCTS">S/ 0.00</td>
                                     </tr>
                                 </tfoot>
@@ -402,10 +406,35 @@
                                     </tr>
                                 </thead>
                                 <tbody id="gratDetalle">
+                                    <tr>
+                                        <td>Tiempo Computable</td>
+                                        <td id="aniosCTS">0</td>
+                                        <td id="montoAniosCTS">S/ 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tiempo Pagado</td>
+                                        <td id="mesesCTS">12</td>
+                                        <td id="montoMesesCTS">S/ 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Meses</td>
+                                        <td id="diasCTS">12</td>
+                                        <td id="montoDiasCTS">S/ 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Días</td>
+                                        <td id="mesesCTS">12</td>
+                                        <td id="montoMesesCTS">S/ 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Días Efectivos</td>
+                                        <td id="diasCTS">12</td>
+                                        <td id="montoDiasCTS">S/ 0.00</td>
+                                    </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr class="font-weight-bold">
-                                        <td colspan="2">Total Gratificación</td>
+                                        <td colspan="2">Total Vacaciones Truncas</td>
                                         <td id="subtotalGratificacion">S/ 0.00</td>
                                     </tr>
                                 </tfoot>
@@ -421,10 +450,25 @@
                                     </tr>
                                 </thead>
                                 <tbody id="gratDetalle">
+                                    <tr>
+                                        <td>Tiempo por Pagar</td>
+                                        <td id="aniosCTS">0</td>
+                                        <td id="montoAniosCTS">S/ 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Meses Efectivos</td>
+                                        <td id="mesesCTS">12</td>
+                                        <td id="montoMesesCTS">S/ 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bono Ley 30334</td>
+                                        <td id="diasCTS">12</td>
+                                        <td id="montoDiasCTS">S/ 0.00</td>
+                                    </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr class="font-weight-bold">
-                                        <td colspan="2">Total Gratificación</td>
+                                        <td colspan="2">Total Gratificaciónes Truncas</td>
                                         <td id="subtotalGratificacion">S/ 0.00</td>
                                     </tr>
                                 </tfoot>
@@ -440,10 +484,30 @@
                                     </tr>
                                 </thead>
                                 <tbody id="gratDetalle">
+                                    <tr>
+                                        <td>Indemnización Vacacional</td>
+                                        <td id="aniosCTS">0</td>
+                                        <td id="montoAniosCTS">S/ 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Devolucion 5ta</td>
+                                        <td id="mesesCTS">12</td>
+                                        <td id="montoMesesCTS">S/ 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Remuneración Mensual</td>
+                                        <td id="diasCTS">12</td>
+                                        <td id="montoDiasCTS">S/ 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Movilidad Supeditada a Asistente</td>
+                                        <td id="diasCTS">12</td>
+                                        <td id="montoDiasCTS">S/ 0.00</td>
+                                    </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr class="font-weight-bold">
-                                        <td colspan="2">Total Gratificación</td>
+                                        <td colspan="2">Total</td>
                                         <td id="subtotalGratificacion">S/ 0.00</td>
                                     </tr>
                                 </tfoot>
