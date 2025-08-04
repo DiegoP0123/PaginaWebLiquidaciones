@@ -1,22 +1,21 @@
-FROM php:8.1-cli
+FROM php:7.4-cli
 
 # Instalar dependencias del sistema y extensiones necesarias
 RUN apt-get update && apt-get install -y \
     git unzip libzip-dev zip libonig-dev libcurl4-openssl-dev \
     && docker-php-ext-install pdo pdo_mysql bcmath mbstring zip curl
 
-# Instalar Composer desde la imagen oficial
+# Composer desde la imagen oficial
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-# Copiar todo el proyecto
 COPY . .
 
-# Forzar que Composer use toda la memoria disponible y luego instalar dependencias
+# Forzar memoria y ejecutar install acorde a la versión de PHP requerida
 RUN COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
 
-# Asegurar permisos en storage y cache
+# Permisos para Laravel
 RUN mkdir -p storage bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
